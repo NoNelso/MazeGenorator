@@ -16,7 +16,9 @@ function setup() {
 function draw() {
   background(1);
   stroke(255);
-  for (let i = 0; i < maze.length; ++i) maze[i].show();
+  for (let i = 0; i < maze.length; ++i) {
+    maze[i].show();
+  }
 }
 
 //psudo-code
