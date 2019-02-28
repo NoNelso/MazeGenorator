@@ -1,10 +1,11 @@
-let x, y, c, r;
+let x, y, c, r, w;
 let maze = [];
 
 function setup() {
   createCanvas(600, 600);
-  c = floor(width / 10);
-  r = floor(height / 10);
+  w = 10;
+  c = floor(width / w);
+  r = floor(height / w);
   for (x = 0; x < c; ++x)
     for (y = 0; y < r; ++y) {
       let cell = new Cell(x, y);
@@ -14,8 +15,8 @@ function setup() {
 
 function draw() {
   background(1);
+  stroke(255);
   for (let i = 0; i < maze.length; ++i) maze[i].show();
-
 }
 
 //psudo-code
