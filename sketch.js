@@ -9,7 +9,7 @@ function draw() {
 //psudo-code
 /*
 Make the initial cell the current cell and mark it as visited
-While there are unvisited cells 
+While there are unvisited cells
   If the current cell has any neighbours which have not been visited
     Choose randomly one of the unvisited neighbours
     Push the current cell to the stack
