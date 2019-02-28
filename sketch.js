@@ -20,7 +20,7 @@ function draw() {
     maze[i].show();
   }
 }
-
+// part 2
 //psudo-code
 /*
 Make the initial cell the current cell and mark it as visited
