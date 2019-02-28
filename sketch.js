@@ -1,10 +1,12 @@
-let x, y;
+let x, y, c, r;
 let maze = [];
 
 function setup() {
   createCanvas(600, 600);
-  for (x = 0; x < width / 10; ++x)
-    for (y = 0; y < height / 10; ++y) {
+  c = floor(width / 10);
+  r = floor(height / 10);
+  for (x = 0; x < c; ++x)
+    for (y = 0; y < r; ++y) {
       let cell = new Cell(x, y);
       maze.push(cell);
     }
