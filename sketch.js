@@ -30,7 +30,7 @@ function draw() {
   }
 }
 
-this.index = function(x, y) {
+function index(x, y) {
   if (x < 0 || y < 0 || x > -1 + c || y > -1 + r) {
     return -1;
   }
