@@ -1,13 +1,13 @@
 let x, y, c, r, w;
 let maze = [];
 let current;
+let stack = [];
 
 function setup() {
   createCanvas(300, 300);
   w = 15;
   c = floor(width / w);
   r = floor(height / w);
-  frameRate(5);
   for (y = 0; y < r; ++y)
     for (x = 0; x < c; ++x) {
       let cell = new Cell(x, y);
@@ -27,10 +27,16 @@ function draw() {
   let next = current.checkNeighbors();
   if (next) {
     next.visited = true;
+    //STEP 2
+    stack.push(current);
     //STEP 3
     removeWalls(current, next);
     //STEP 4
     current = next;
+    console.log(current);
+  } else if (stack.length > 0) {
+    current = stack.pop();
+    console.log('cur', current);
   }
 }
 
