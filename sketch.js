@@ -1,5 +1,6 @@
 let x, y, c, r, w;
 let maze = [];
+let current;
 
 function setup() {
   createCanvas(300, 300);
@@ -12,13 +13,22 @@ function setup() {
       let cell = new Cell(x, y);
       maze.push(cell);
     }
+  current = maze[0];
 }
 
 function draw() {
   background(1);
   stroke(255);
-  for (let i = 0; i < maze.length; ++i) {
-    maze[i].show();
+  for (let i = 0; i < maze.length; ++i) maze[i].show();
+
+  current.visited = true;
+
+  let next = current.checkNeighbors();
+  if (next) {
+    next.visited = true;
+    current = next;
+  }
+}
 
 this.index = function(x, y) {
   if (x < 0 || y < 0 || x > -1 + c || y > -1 + r) {
