@@ -58,7 +58,7 @@ function removeWalls(c, n) {
     n.wal[0] = false;
   }
 }
-//part3
+//part4
 //psudo-code
 /*
 1 Make the initial cell the current cell and mark it as visited           √
