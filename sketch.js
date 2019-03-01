@@ -19,7 +19,12 @@ function draw() {
   stroke(255);
   for (let i = 0; i < maze.length; ++i) {
     maze[i].show();
+
+this.index = function(x, y) {
+  if (x < 0 || y < 0 || x > -1 + c || y > -1 + r) {
+    return -1;
   }
+  return x + (y * c);
 }
 // part 2
 //psudo-code
