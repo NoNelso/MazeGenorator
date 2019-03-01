@@ -2,12 +2,13 @@ let x, y, c, r, w;
 let maze = [];
 
 function setup() {
-  createCanvas(600, 600);
-  w = 10;
+  createCanvas(300, 300);
+  w = 15;
   c = floor(width / w);
   r = floor(height / w);
   for (x = 0; x < c; ++x)
     for (y = 0; y < r; ++y) {
+  frameRate(5);
       let cell = new Cell(x, y);
       maze.push(cell);
     }
