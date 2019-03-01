@@ -14,7 +14,6 @@ function Cell(x, y) {
     if (r && !r.visited) n.push(r);
     if (d && !d.visited) n.push(d);
     if (l && !l.visited) n.push(l);
-    if (n.length < 1) noLoop();
     if (n.length > 0) {
       let i = floor(random(n.length));
       return n[i];
