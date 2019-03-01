@@ -22,7 +22,8 @@ function draw() {
   for (let i = 0; i < maze.length; ++i) maze[i].show();
 
   current.visited = true;
-
+  current.head();
+  // STEP 1
   let next = current.checkNeighbors();
   if (next) {
     next.visited = true;

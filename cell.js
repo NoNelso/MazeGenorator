@@ -21,6 +21,15 @@ function Cell(x, y) {
     } else return undefined;
   }
 
+  this.head = function() {
+    let x = (this.x + .5) * w;
+    let y = (this.y + .5) * w;
+    let r = w * 0.75;
+    noStroke();
+    fill(200);
+    ellipse(x, y, r);
+  }
+
   this.show = function() {
     let xw = this.x * w;
     let yw = this.y * w;
