@@ -33,10 +33,16 @@ function draw() {
     removeWalls(current, next);
     //STEP 4
     current = next;
-    console.log(current);
   } else if (stack.length > 0) {
     current = stack.pop();
-    console.log('cur', current);
+  }
+  for (let i = 0; i < stack.length; ++i) {
+    let k = (stack[i].x + .5) * w;
+    let l = (stack[i].y + .5) * w;
+    let r = w * 1.1;
+    noStroke();
+    fill(180, 100);
+    ellipse(k, l, r);
   }
 }
 
