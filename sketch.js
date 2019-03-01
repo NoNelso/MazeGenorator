@@ -26,6 +26,9 @@ function draw() {
   let next = current.checkNeighbors();
   if (next) {
     next.visited = true;
+    //STEP 3
+    removeWalls(current, next);
+    //STEP 4
     current = next;
   }
 }
@@ -35,6 +38,24 @@ function index(x, y) {
     return -1;
   }
   return x + (y * c);
+}
+
+function removeWalls(c, n) {
+  let a = c.x - n.x;
+  let b = c.y - n.y;
+  if (a > 0) {
+    c.wal[3] = false;
+    n.wal[1] = false;
+  } else if (a < 0) {
+    c.wal[1] = false;
+    n.wal[3] = false;
+  } else if (b > 0) {
+    c.wal[0] = false;
+    n.wal[2] = false;
+  } else if (b < 0) {
+    c.wal[2] = false;
+    n.wal[0] = false;
+  }
 }
 //part3
 //psudo-code
